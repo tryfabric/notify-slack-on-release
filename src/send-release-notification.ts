@@ -29,7 +29,7 @@ export async function sendReleaseNotification({
     type: 'header',
     text: {
       type: 'plain_text',
-      text: `🏷 New Release: ${release.name}`
+      text: `🎉 New Release: ${release.name}`
     }
   }
   const linkBlock: SectionBlock = {
