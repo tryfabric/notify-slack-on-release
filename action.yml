@@ -1,11 +1,10 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'Notify Slack on Release'
+description: 'Notify a Slack channel when there is a new release'
+author: 'Instantish'
 inputs:
-  milliseconds: # change this
+  slack_webhook_url: # change this
     required: true
-    description: 'input description here'
-    default: 'default value if applicable'
+    description: 'The webhook URL for the Slack channel'
 runs:
   using: 'node16'
   main: 'dist/index.js'
