@@ -1,10 +1,32 @@
-## Usage
+# Usage
 
 - [Create a Slack app](https://api.slack.com/apps/new) called "Release Bot"
 - Clock **Incoming Webhooks** and toggle **Activate Incoming Webhooks**
 - Click **Add New Webhook to Workspace**
 - Pick the channel the app will post to and then click **Authorize**
 - Set your `SLACK_WEBHOOK_URL` to the Webhook URL
+- Create a workflow file
+
+```yaml
+name: Notify Slack on Release
+
+on:
+  release:
+    types:
+      - created
+
+jobs:
+  notify_slack:
+    runs-on: ubuntu-latest
+    name: Notify Slack on Release
+    steps:
+      - name: Notify Slack on Release
+        uses: instantish/notify-slack-on-release@v0.0.2
+        with:
+          slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
+```
+
+# Contributing
 
 ## Code in Main
 
@@ -53,11 +75,7 @@ You can now validate the action by referencing `./` in a workflow in your repo (
 ```yaml
 uses: ./
 with:
-  milliseconds: 1000
+  slack_webhook_url: <url>
 ```
 
 See the [actions tab](https://github.com/actions/typescript-action/actions) for runs of this action! :rocket:
-
-## Usage:
-
-After testing you can [create a v1 tag](https://github.com/actions/toolkit/blob/master/docs/action-versioning.md) to reference the stable and latest V1 action
