@@ -1,3 +1,10 @@
+# Notify Slack on Release
+
+This GitHub Action sends a rich-text notification to your Slack channel when there's a new release in your GitHub repository. This uses [mack](https://github.com/instantish/mack) to render the body of the release as Slack blocks.
+
+<img width="751" alt="Screen Shot 2022-04-06 at 4 45 43 PM" src="https://user-images.githubusercontent.com/1459660/162068643-cf95aa5a-b50f-4730-8f8f-ebc4d3e70434.png">
+
+
 # Usage
 
 - [Create a Slack app](https://api.slack.com/apps/new) called "Release Bot"
