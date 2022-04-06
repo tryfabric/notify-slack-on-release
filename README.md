@@ -1,3 +1,11 @@
+## Usage
+
+- [Create a Slack app](https://api.slack.com/apps/new) called "Release Bot"
+- Clock **Incoming Webhooks** and toggle **Activate Incoming Webhooks**
+- Click **Add New Webhook to Workspace**
+- Pick the channel the app will post to and then click **Authorize**
+- Set your `SLACK_WEBHOOK_URL` to the Webhook URL
+
 ## Code in Main
 
 Install the dependencies
@@ -21,7 +29,7 @@ $ npm test
 
 ## Publish to a distribution branch
 
-Actions are run from GitHub repos so we will checkin the packed dist folder.
+Actions are run from GitHub repos so we will check in the packed dist folder.
 
 Then run [ncc](https://github.com/zeit/ncc) and push the results:
 
