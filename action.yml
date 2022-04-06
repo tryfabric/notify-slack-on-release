@@ -1,5 +1,8 @@
 name: 'Notify Slack on Release'
 description: 'Notify a Slack channel when there is a new release'
+branding:
+  icon: 'book'
+  color: 'green'
 author: 'Instantish'
 inputs:
   slack_webhook_url: # change this
