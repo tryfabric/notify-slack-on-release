@@ -1,16 +1,26 @@
 import * as core from '@actions/core'
-import {wait} from './wait'
+import * as github from '@actions/github'
+import type {ReleaseReleasedEvent} from '@octokit/webhooks-types'
+import {sendReleaseNotification} from './send-release-notification'
 
 async function run(): Promise<void> {
   try {
-    const ms: string = core.getInput('milliseconds')
-    core.debug(`Waiting ${ms} milliseconds ...`) // debug is only output if you set the secret `ACTIONS_STEP_DEBUG` to true
+    const slackWebhookUrl: string = core.getInput('slack_webhook_url')
+    core.debug(`Sending notification...`)
 
-    core.debug(new Date().toTimeString())
-    await wait(parseInt(ms, 10))
-    core.debug(new Date().toTimeString())
+    const context = github.context
+    const {eventName, repo} = context
+    if (eventName !== 'release') {
+      core.setFailed('Action should only be run on release publish events')
+    }
+    const payload = context.payload as ReleaseReleasedEvent
+    await sendReleaseNotification({
+      slackWebhookUrl,
+      release: payload.release,
+      repo
+    })
 
-    core.setOutput('time', new Date().toTimeString())
+    core.debug('Sent notification')
   } catch (error) {
     if (error instanceof Error) core.setFailed(error.message)
   }
