@@ -11,7 +11,8 @@
     "lint": "eslint src/**/*.ts",
     "package": "ncc build --source-map --license licenses.txt",
     "test": "jest",
-    "all": "npm run build && npm run format && npm run lint && npm run package && npm test"
+    "all": "npm run build && npm run format && npm run lint && npm run package && npm test",
+    "release": "release-it"
   },
   "repository": {
     "type": "git",
@@ -45,6 +46,7 @@
     "jest": "^27.5.1",
     "js-yaml": "^4.1.0",
     "prettier": "2.5.1",
+    "release-it": "^14.14.0",
     "sinon": "^13.0.1",
     "ts-jest": "^27.1.4",
     "typescript": "^4.4.4"
