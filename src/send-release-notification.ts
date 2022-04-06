@@ -29,7 +29,7 @@ export async function sendReleaseNotification({
     type: 'header',
     text: {
       type: 'plain_text',
-      text: `🏷 ${release.name} has been released in ${repo.owner}/${repo.repo}`
+      text: `🏷 New Release: ${release.name}`
     }
   }
   const linkBlock: SectionBlock = {
