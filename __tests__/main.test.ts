@@ -2,7 +2,7 @@ import axios from 'axios'
 import {sendReleaseNotification} from '../src/send-release-notification'
 import sinon from 'sinon'
 import {expect, test} from '@jest/globals'
-import {release} from './fixtures/release'
+import {release} from '../src/fixtures/release'
 
 beforeEach(() => {
   sinon.stub(axios, 'post').resolvesArg(1)
