@@ -41,8 +41,8 @@ const send_release_notification_1 = __nccwpck_require__(2152);
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const slackWebhookUrl = core.getInput('slack_webhook_url');
             core.debug(`Sending notification...`);
+            const slackWebhookUrl = core.getInput('slack_webhook_url');
             const context = github.context;
             const { eventName, repo } = context;
             if (eventName !== 'release') {
