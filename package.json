@@ -45,7 +45,7 @@
     "eslint-plugin-jest": "^25.3.2",
     "jest": "^27.5.1",
     "js-yaml": "^4.1.0",
-    "prettier": "2.5.1",
+    "prettier": "2.6.2",
     "release-it": "^14.14.0",
     "sinon": "^13.0.1",
     "ts-jest": "^27.1.4",
