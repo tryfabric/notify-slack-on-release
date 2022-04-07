@@ -5,8 +5,8 @@ import {sendReleaseNotification} from './send-release-notification'
 
 async function run(): Promise<void> {
   try {
-    const slackWebhookUrl: string = core.getInput('slack_webhook_url')
     core.debug(`Sending notification...`)
+    const slackWebhookUrl: string = core.getInput('slack_webhook_url')
 
     const context = github.context
     const {eventName, repo} = context
