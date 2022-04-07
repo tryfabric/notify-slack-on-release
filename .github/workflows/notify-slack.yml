@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Notify Slack on Release
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Notify Slack on Release
         uses: ./
         with:
