@@ -7,6 +7,8 @@ This GitHub Action sends a rich-text notification to your Slack channel when the
 
 # Usage
 
+See our walkthrough video: https://www.youtube.com/watch?v=RKfsnp_AN-4&t=12s
+
 - [Create a Slack app](https://api.slack.com/apps/new) called "Release Bot"
 - Clock **Incoming Webhooks** and toggle **Activate Incoming Webhooks**
 - Click **Add New Webhook to Workspace**
