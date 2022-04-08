@@ -1,21 +1,20 @@
 # Notify Slack on Release
 
-This GitHub Action sends a rich-text notification to your Slack channel when there's a new release in your GitHub repository. This uses [mack](https://github.com/instantish/mack) to render the body of the release as Slack blocks.
+This GitHub Action sends a rich-text notification to your Slack channel when there's a new release in your GitHub repository.
+
+We use [mack](https://github.com/instantish/mack) to render the body of the release as Slack blocks.
 
 <img width="782" alt="Screen Shot 2022-04-06 at 5 02 52 PM" src="https://user-images.githubusercontent.com/1459660/162070477-1cee2181-caec-448a-87b8-fc996c585fdc.png">
 
-
 # Usage
-
-See our walkthrough video: https://www.youtube.com/watch?v=RKfsnp_AN-4&t=12s
+## Instructions
 
 - [Create a Slack app](https://api.slack.com/apps/new) called "Release Bot"
-- Clock **Incoming Webhooks** and toggle **Activate Incoming Webhooks**
+- Click **Incoming Webhooks** and toggle **Activate Incoming Webhooks**
 - Click **Add New Webhook to Workspace**
 - Pick the channel the app will post to and then click **Authorize**
 - Set your `SLACK_WEBHOOK_URL` to the Webhook URL
 - Create a workflow file
-
 ```yaml
 name: Notify Slack on Release
 
@@ -37,10 +36,15 @@ jobs:
 
 <img width="973" alt="Screen Shot 2022-04-06 at 4 55 22 PM" src="https://user-images.githubusercontent.com/1459660/162070525-9fe28500-942a-4158-bd5c-3ebaebb28b0d.png">
 
+## Walkthrough video
+
+[![Walkthrough](https://fabric-slack.s3.us-east-2.amazonaws.com/TJ5G67VHU/31fae90afecb2cf0022459532438b759-screen_shot_2022-04-08_at_12.21.08_pm.png)](https://www.youtube.com/watch?v=RKfsnp_AN-4&t=12s)
+
+
 
 # Contributing
 
-## Code in Main
+## Developing locally
 
 Install the dependencies
 
@@ -61,7 +65,7 @@ $ npm test
 ...
 ```
 
-## Release-it
+## Releasing
 
 Cut a new release
 
